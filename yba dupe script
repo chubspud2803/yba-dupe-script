@@ -1,0 +1,20 @@
+local args = {
+    [1] = "EndDialogue",
+    [2] = {
+        ["NPC"] = "Alex",
+        ["Option"] = "Option1",
+        ["Dialogue"] = "Dialogue4"
+    }
+}
+
+game:GetService("Players").LocalPlayer.Character.RemoteEvent:FireServer(unpack(args))
+
+for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Frames.Cosmetics.Frame.ScrollingFrame:GetChildren()) do
+local Cosmetic = v
+local args = {
+    [1] = "RemoveCosmetic",
+    [2] = tostring(Cosmetic.Name)
+}
+
+game:GetService("Players").LocalPlayer.Character.RemoteEvent:FireServer(unpack(args))
+end
